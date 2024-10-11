@@ -71,22 +71,25 @@ app.get('/', (req, res) => {
 })
 
 // Submit route for when the submit button is clicked
-app.post('/submit-form', async (req, res) => {
+app.post('/submit_form', async (req, res) => {
   const formData = req.body
 
   // Prepare data array for Google Sheets
   // You can change this to fix your HTML form names
   const data = [
-    formData.name,
+    formData.firstName,
+    formData.lastName,
     formData.email,
-    formData.age,
+    formData.password,
+    formData.confirmPassword,
     formData.phone,
-    formData.gender,
-    formData.address,
-    formData.country,
     formData.dob,
-    formData.occupation,
-    formData.feedback,
+    formData.gender,
+    formData.nationality,
+    formData.nonNigerianNationality,
+    formData.stateOfOrigin,
+    formData.profilePicture,
+    formData.agreement,
   ]
 
   // Append the data to Google Sheets
