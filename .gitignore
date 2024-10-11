@@ -1,2 +1,4 @@
-7node_modules
+node_modules
+trash.txt
+credentials.json
 .env
