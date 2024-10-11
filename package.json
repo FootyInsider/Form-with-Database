@@ -1,0 +1,19 @@
+{
+  "name": "for-temple",
+  "version": "1.0.0",
+  "description": "Learning about Express JS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Fabian Joseph",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "cra-template": "1.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "googleapis": "^122.0.0"
+  }
+}
