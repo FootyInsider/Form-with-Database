@@ -79,7 +79,7 @@ app.post('/submit_form', async (req, res) => {
     formData.nationality,
     formData.nonNigerianNationality,
     formData.stateOfOrigin,
-    formData.profilePicture,
+   // formData.profilePicture,
     formData.agreement,
   ]
  console.log(data)
