@@ -82,7 +82,7 @@ app.post('/submit_form', async (req, res) => {
     formData.profilePicture,
     formData.agreement,
   ]
-
+ console.log(data)
   // Append the data to Google Sheets
   try {
     await appendToGoogleSheet(data)
