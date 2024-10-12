@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
 })
 
 // Submit route for when the submit button is clicked
-app.post('/submit-form', async (req, res) => {
+app.post('/submit_form', async (req, res) => {
   const formData = req.body
 
   // Prepare data array for Google Sheets
