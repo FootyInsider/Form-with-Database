@@ -1,48 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- action="/submit" tells the browers to go to /submit route when user clicks submit button  -->
-    <form action="/submit-form" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <form action="/submit_form" method="POST" enctype="multipart/form-data">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required>
 
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-    <label for="phone">Phone Number:</label>
-    <input type="tel" id="phone" name="phone"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
 
-    <label for="gender">Gender:</label>
-    <select id="gender" name="gender">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="other">Other</option>
-    </select><br><br>
+      </select>
 
-    <label for="address">Address:</label>
-    <textarea id="address" name="address"></textarea><br><br>
+      <label for="nationality">Nationality:</label>
+      <select id="nationality" name="nationality" required>
+        <option value="nigerian">Nigerian</option>
+        <option value="non-nigerian">Non-Nigerian</option>
+      </select>
 
-    <label for="country">Country:</label>
-    <input type="text" id="country" name="country"><br><br>
+      <div id="nonNigerianField" style="display: none;">
+        <label for="nonNigerianNationality">If Non-Nigerian, Nationality:</label>
+        <input type="text" id="nonNigerianNationality" name="nonNigerianNationality">
+      </div>
 
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" name="dob"><br><br>
+      <div id="nigerianField">
+        <label for="stateOfOrigin"> State of Origin:</label>
+        <select id="stateOfOrigin" name="stateOfOrigin">
+            <option value="none" selected>None</option>
+            <option value="abia">Abia State</option>
+            <option value="adamawa">Adamawa State</option>
+            <option value="akwa-ibom">Akwa-Ibom State</option>
+            <option value="anambra">Anambra State</option>
+            <option value="bauchi">Bauchi State</option>
+            <option value="bayelsa">Bayelsa State</option>
+            <option value="benue">Benue State</option>
+            <option value="borno">Borno State</option>
+            <option value="cross-river">Cross-River State</option>
+            <option value="delta">Delta State</option>
+            <option value="ebonyi">Ebonyi State</option>
+            <option value="edo">Edo State</option>
+            <option value="ekiti">Ekiti State</option>
+            <option value="enugu">Enugu State</option>
+            <option value="gombe">Gombe State</option>
+            <option value="imo">Imo State</option>
+            <option value="jigawa">Jigawa State</option>
+            <option value="kaduna">Kaduna State</option>
+            <option value="kano">Kano State</option>
+            <option value="katsina">Katsina State</option>
+            <option value="kebbi">Kebbi State</option>
+            <option value="Kogi">Kogi State</option>
+            <option value="Kwara">Kwara State</option>
+            <option value="lagos">Lagos State</option>
+            <option value="nasarawa">Nasarawa State</option>
+            <option value="niger">Niger State</option>
+            <option value="ogun">Ogun State</option>
+            <option value="ondo">Ondo State</option>
+            <option value="osun">Osun State</option>
+            <option value="oyo">Oyo State</option>
+            <option value="plateau">Plateau State</option>
+            <option value="rivers">Rivers State</option>
+            <option value="sokoto">Sokoto State</option>
+            <option value="Taraba">Taraba State</option>
+            <option value="yobe">Yobe State</option>
+            <option value="zamfara">Zamfara State</option>
+            <option value="FCT">FCT</option>
+        </select>
+      </div> 
 
-    <label for="occupation">Occupation:</label>
-    <input type="text" id="occupation" name="occupation"><br><br>
+      <label for="profilePicture"> Profile Picture: </label>
+      <input type="file" id="profilePicture" name="profilePicture" required>
 
-    <label for="feedback">Feedback:</label>
-    <textarea id="feedback" name="feedback"></textarea><br><br>
+      <label for="agreement">
+        <input type="checkbox" id="agreement" name="agreement" required>
+         I legally agree to providing my details herein for research purposes only
+      </label>
 
-    <button type="submit">Submit</button>
-</form>
+      <p id="error-message" style="color: red; display: none;">Passwords do not match!</p>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <script src="script.js"></script>  
 </body>
-  </html>
+</html>
