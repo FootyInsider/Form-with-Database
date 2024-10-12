@@ -20,8 +20,8 @@ async function appendToGoogleSheet(data) {
 const credentials = JSON.parse(
   Buffer.from(process.env.CRED, "base64").toString()
 )
-  console.log(process.env.sheet_id)
-  console.log(credentials)
+ // console.log(process.env.sheet_id)
+  //console.log(credentials)
   // Inserting credentials.json Into Parser
   const auth = new google.auth.GoogleAuth({
     // keyFile: path.join(__dirname,'credentials.json'),
@@ -82,8 +82,8 @@ app.post('/submit_form', async (req, res) => {
     formData.profilePicture,
     formData.agreement,
   ]
- console.log(data)
-  console.log(formData)
+// console.log(data)
+  //console.log(formData)
   
   // Append the data to Google Sheets
   try {
