@@ -17,27 +17,17 @@ require('dotenv').config()
 
 // Function to add user data to Google Sheets
 async function appendToGoogleSheet(data) {
+const credentials = JSON.parse(
+  Buffer.from(process.env.CRED, "base64").toString()
+  )
 
   // Inserting credentials.json Into Parser
   const auth = new google.auth.GoogleAuth({
     // keyFile: path.join(__dirname,'credentials.json'),
-      credentials:{ 
-                    type: process.env.type,
-                    project_id: process.env.project_id,
-                    private_key_id: process.env.private_key_id,
-                    private_key: process.env.private_key,
-                    client_email: process.env.client_email,
-                    client_id: process.env.client_id,
-                    auth_uri: process.env.auth_uri,
-                    token_uri: process.env.token_uri,
-                    auth_provider_x509_cert_url: process.env.auth_provider_x509_cert_url,
-                    client_x509_cert_url: process.env.client_x509_cert_url,
-                    universe_domain: process.env.universe_domain,
-                    sheet_id: process.env.sheet_id
-    },
+      credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   })
-
+  
   // Getting authentication For Parsed Object 
   const authClient = await auth.getClient()
 
