@@ -68,16 +68,19 @@ app.post('/submit-form', async (req, res) => {
   // Prepare data array for Google Sheets
   // You can change this to fix your HTML form names
   const data = [
-    formData.name,
+    formData.firstName,
+    formData.lastName,
     formData.email,
-    formData.age,
+    formData.password,
+    formData.confirmPassword,
     formData.phone,
-    formData.gender,
-    formData.address,
-    formData.country,
     formData.dob,
-    formData.occupation,
-    formData.feedback,
+    formData.gender,
+    formData.nationality,
+    formData.nonNigerianNationality,
+    formData.stateOfOrigin,
+    formData.profilePicture,
+    formData.agreement,
   ]
 
   // Append the data to Google Sheets
