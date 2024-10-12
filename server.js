@@ -83,6 +83,8 @@ app.post('/submit_form', async (req, res) => {
     formData.agreement,
   ]
  console.log(data)
+  console.log(formData)
+  
   // Append the data to Google Sheets
   try {
     await appendToGoogleSheet(data)
