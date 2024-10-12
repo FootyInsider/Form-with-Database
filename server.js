@@ -19,15 +19,14 @@ require('dotenv').config()
 async function appendToGoogleSheet(data) {
 const credentials = JSON.parse(
   Buffer.from(process.env.CRED, "base64").toString()
-  )
-
+)
   // Inserting credentials.json Into Parser
   const auth = new google.auth.GoogleAuth({
     // keyFile: path.join(__dirname,'credentials.json'),
       credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   })
-  
+
   // Getting authentication For Parsed Object 
   const authClient = await auth.getClient()
 
@@ -61,25 +60,22 @@ app.get('/', (req, res) => {
 })
 
 // Submit route for when the submit button is clicked
-app.post('/submit_form', async (req, res) => {
+app.post('/submit-form', async (req, res) => {
   const formData = req.body
 
   // Prepare data array for Google Sheets
   // You can change this to fix your HTML form names
   const data = [
-    formData.firstName,
-    formData.lastName,
+    formData.name,
     formData.email,
-    formData.password,
-    formData.confirmPassword,
+    formData.age,
     formData.phone,
-    formData.dob,
     formData.gender,
-    formData.nationality,
-    formData.nonNigerianNationality,
-    formData.stateOfOrigin,
-    formData.profilePicture,
-    formData.agreement,
+    formData.address,
+    formData.country,
+    formData.dob,
+    formData.occupation,
+    formData.feedback,
   ]
 
   // Append the data to Google Sheets
